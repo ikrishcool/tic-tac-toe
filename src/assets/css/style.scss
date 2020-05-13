@@ -1,0 +1,143 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background-color: #333;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#screen {
+    background: linear-gradient(225deg, #f58714 30%, #f54d63 60%);
+    max-width: 500px;
+    border-radius: 10px;
+    
+    h3 {
+        font-family: 'Leckerli One', cursive;
+        font-weight: 700;
+        color: #fff;
+        font-size: 4rem;
+        padding: 0 20px;
+        text-align: center;
+        margin: 50px auto 0px;
+    }
+
+    .logo  {
+        text-align: center;
+        width: 60%;
+        margin: 15px auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .buttons-section {
+        text-align: center;
+        padding-bottom: 50px;
+        
+        .btn {
+            width: fit-content;
+            display: block;
+            background-color: #f1f1f1;
+            color: #333;
+            text-transform: uppercase;
+            border-radius: 25px;
+            margin: 20px auto 0;
+            padding: 10px 30px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            outline: 0;
+            border: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
+            span {
+                position: absolute;
+                background-color: #f54d63;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                animation: ripple-effect 0.5s linear normal;
+                pointer-events: none;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    @keyframes ripple-effect {
+        from {
+            width: 0;
+            height: 0;
+        }
+        to {
+            width: 500px;
+            height: 500px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    body {
+        position: fixed;
+        overflow: hidden;
+    }
+    
+    #screen {
+        height: 100vh;
+        border-radius: 0;
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(225deg, #f58714 25%, #f54d63 50%);
+
+        .logo {
+            margin: 20px auto;
+        }
+
+        .buttons-section {
+            position: absolute;
+            width: 100%;
+            bottom: 8vh;
+        }
+
+    }
+}
+
+@media screen and (max-height: 770px) and (min-height: 500px) {
+
+    #screen {
+        width: 400px;
+        background: linear-gradient(225deg, #f58714 30%, #f54d63 55%);
+
+        h3 {
+            font-size: 3rem;
+            margin-top: 30px;
+        }
+
+        .logo {
+            width: 40%;
+        }
+
+        .buttons-section {
+            padding-bottom: 40px;
+            
+            .btn {
+                font-size: 1rem;
+            }
+        }
+
+    }
+    
+}
